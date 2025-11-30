@@ -1,7 +1,20 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xs: 23.75rem;
+  --breakpoint-sx: 32.5rem;
+  --breakpoint-sm: 42.5rem;
+  --breakpoint-md: 62.5rem;
+  --breakpoint-lg: 81.3rem;
+  --breakpoint-xl: 106.25rem;
+
   --font-sans: "Gilroy", system-ui, sans-serif;
+
+  --color-bg: #fff;
+  --color-bg-btn: #eae3e1;
+  --color-text: #000;
+  --color-primary: #578c62;
+  --color-border: #d7dbe2;
 }
 
 @layer base {
@@ -9,6 +22,14 @@
     font-family: "Gilroy";
     src: url("/fonts/Gilroy-Regular.woff2") format("woff2");
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/Gilroy-Medium.woff2") format("woff2");
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
