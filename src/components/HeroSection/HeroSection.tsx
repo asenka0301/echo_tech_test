@@ -4,7 +4,7 @@ import HeroIntro from "./HeroIntro";
 
 const HeroSection: FC = (): JSX.Element => {
   return (
-    <div>
+    <div className="flex flex-col">
       <HeroContent />
       <HeroIntro />
     </div>
