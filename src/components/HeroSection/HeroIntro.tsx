@@ -1,4 +1,5 @@
 import type { FC, JSX } from "react";
+import HeroSlider from "./HeroSlider";
 
 const HeroIntro: FC = (): JSX.Element => {
   return (
@@ -121,7 +122,7 @@ const HeroIntro: FC = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div>slider</div>
+      <HeroSlider />
     </div>
   );
 };
