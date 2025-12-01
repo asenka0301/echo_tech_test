@@ -22,7 +22,6 @@ const HeroSlider: FC = (): JSX.Element => {
           swiperRef.current = swiper;
         }}
         autoHeight
-        allowTouchMove={false}
         className="hero-swiper w-full overflow-visible"
       >
         {heroSlides.map(({ id, src, title, square }) => (
