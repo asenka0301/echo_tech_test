@@ -46,7 +46,7 @@ const HeroVideos: FC = (): JSX.Element => {
                 relative pl-4.5
                 before:absolute before:left-0 before:top-1
                 before:h-3 before:w-3
-                before:bg-[url('images/check.svg')]
+                before:bg-[url('/images/check.svg')]
                 before:bg-no-repeat before:bg-contain"
             >
               Москва, 51-й км МКАД
@@ -56,7 +56,7 @@ const HeroVideos: FC = (): JSX.Element => {
                 relative pl-4.5
                 before:absolute before:left-0 before:top-1
                 before:h-3 before:w-3
-                before:bg-[url('images/check.svg')]
+                before:bg-[url('/images/check.svg')]
                 before:bg-no-repeat before:bg-contain"
             >
               Наро-Фоминск
@@ -114,7 +114,7 @@ const HeroVideos: FC = (): JSX.Element => {
                   relative pl-4.5
                   before:absolute before:left-0 before:top-1
                   before:h-3 before:w-3
-                  before:bg-[url('images/check.svg')]
+                  before:bg-[url('/images/check.svg')]
                   before:bg-no-repeat before:bg-contain"
             >
               Собственная лесозаготовка
@@ -124,7 +124,7 @@ const HeroVideos: FC = (): JSX.Element => {
                   relative pl-4.5
                   before:absolute before:left-0 before:top-1
                   before:h-3 before:w-3
-                  before:bg-[url('images/check.svg')]
+                  before:bg-[url('/images/check.svg')]
                   before:bg-no-repeat before:bg-contain"
             >
               4 цеха в Архангельской области
