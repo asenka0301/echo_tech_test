@@ -1,10 +1,23 @@
-import type { FC, JSX } from "react";
+import { useRef, type FC, type JSX } from "react";
 
 const HeroVideos: FC = (): JSX.Element => {
+  const firstVideoRef = useRef<HTMLVideoElement | null>(null);
+  const secondVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  const toggleVideo = (video: HTMLVideoElement | null) => {
+    if (!video) return;
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  };
+
   return (
     <div className="flex w-full flex-col lg:basis-[60.46%] sx:flex-row sx:order-2 gap-12 sx:gap-5.5 md:gap-5 lg:gap-6 xl:gap-10">
       <div className="flex flex-col gap-2.5 sx:flex-1">
-        <div className="relative w-full h-[200px] sx:h-[177px] md:h-[280px] lg:h-[200px] xl:h-[280px] rounded-[15px] overflow-hidden">
+        <div className="relative w-full h-[200px] sx:h-[177px] md:h-[280px] lg:h-[200px] xl:h-[280px] rounded-[15px] overflow-hidden cursor-pointer">
           <span className="absolute top-2.5 sx:top-4.5 md:top-5 left-2.5 sx:left-3.5 md:left-5 lg:left-4 xl:left-5 inline-block px-2.5 py-1 text-text font-medium bg-bg rounded-[87px] z-10">
             2 выставочные площадки
           </span>
@@ -12,11 +25,13 @@ const HeroVideos: FC = (): JSX.Element => {
             Посмотрите, как выглядят наши дома вживую
           </span>
           <video
+            ref={firstVideoRef}
             playsInline
             muted
             preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
             poster="images/posters/video1.png"
+            onClick={() => toggleVideo(firstVideoRef.current)}
           >
             <source
               src="https://ansaradev.ru/ecotech/bann1.mp4"
@@ -28,21 +43,21 @@ const HeroVideos: FC = (): JSX.Element => {
           <ul className="flex flex-col text-sm">
             <li
               className="
-                  relative pl-4.5
-                  before:absolute before:left-0 before:top-1
-                  before:h-3 before:w-3
-                  before:bg-[url('images/check.svg')]
-                  before:bg-no-repeat before:bg-contain"
+                relative pl-4.5
+                before:absolute before:left-0 before:top-1
+                before:h-3 before:w-3
+                before:bg-[url('images/check.svg')]
+                before:bg-no-repeat before:bg-contain"
             >
               Москва, 51-й км МКАД
             </li>
             <li
               className="
-                  relative pl-4.5
-                  before:absolute before:left-0 before:top-1
-                  before:h-3 before:w-3
-                  before:bg-[url('images/check.svg')]
-                  before:bg-no-repeat before:bg-contain"
+                relative pl-4.5
+                before:absolute before:left-0 before:top-1
+                before:h-3 before:w-3
+                before:bg-[url('images/check.svg')]
+                before:bg-no-repeat before:bg-contain"
             >
               Наро-Фоминск
             </li>
@@ -57,10 +72,12 @@ const HeroVideos: FC = (): JSX.Element => {
         </div>
       </div>
       <div className="flex flex-col gap-2.5 sx:flex-1">
-        <div className="relative w-full h-[200px] xs:h-[177px] md:h-[280px] lg:h-[200px] xl:h-[280px] rounded-[15px] overflow-hidden ">
+        <div className="relative w-full h-[200px] xs:h-[177px] md:h-[280px] lg:h-[200px] xl:h-[280px] rounded-[15px] overflow-hidden">
           <video
+            ref={secondVideoRef}
             playsInline
             muted
+            controls={false}
             preload="metadata"
             poster="images/posters/video2.png"
             className="absolute inset-0 w-full h-full object-cover"
@@ -73,18 +90,22 @@ const HeroVideos: FC = (): JSX.Element => {
 
           <div
             className="pointer-events-none absolute inset-0 z-10
-               bg-[linear-gradient(90deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_46%,rgba(0,0,0,0.6)_100%)]"
+              bg-[linear-gradient(90deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_46%,rgba(0,0,0,0.6)_100%)]"
           />
-          <span className="absolute top-2.5 left-2.5 z-20 flex items-center gap-2.5 w-[220px] sm:w-[300px]">
+          <button
+            type="button"
+            className="absolute top-2.5 left-2.5 z-20 flex items-center gap-2.5 w-[220px] sm:w-[300px]"
+            onClick={() => toggleVideo(secondVideoRef.current)}
+          >
             <img
               src="images/play.svg"
               className="sm:w-[38px] sm:h-[38px]"
               alt="Видео"
             />
-            <span className="text-bg font-bold">
+            <span className="text-bg font-bold text-left">
               Видео о том, как создаётся идеальный дом
             </span>
-          </span>
+          </button>
         </div>
         <div className="flex flex-col justify-start gap-3.5">
           <ul className="flex flex-col text-sm">
