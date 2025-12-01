@@ -3,27 +3,22 @@ import HeroSlider from "./HeroSlider";
 
 const HeroIntro: FC = (): JSX.Element => {
   return (
-    <div className="flex flex-col mt-[57px] mb-20 text-sm md:text-base">
-      <div className="flex flex-col sx:flex-row gap-12">
+    <div className="flex flex-col lg:flex-row gap-14.5 sx:gap-5 lg:gap-6 xl:gap-10 mt-[59px] md:mt-[72px] lg:mt-[82px] xl:mt-[103px] text-sm md:text-base">
+      <div className="flex w-full flex-col lg:basis-[60.46%] sx:flex-row sx:order-2 gap-12 sx:gap-5.5 md:gap-5 lg:gap-6 xl:gap-10">
         <div className="flex flex-col gap-2.5 sx:flex-1">
-          <div
-            className="
-              relative 
-              w-full 
-              h-[200px]
-              sx:[177px]       
-              md:h-[280px]
-              lg:h-[300px]
-              xl:h-[280px]
-              rounded-[15px]
-              overflow-hidden"
-          >
+          <div className="relative w-full h-[200px] sx:h-[177px] md:h-[280px] lg:h-[200px] xl:h-[280px] rounded-[15px] overflow-hidden">
+            <span className="absolute top-2.5 sx:top-4.5 md:top-5 left-2.5 sx:left-3.5 md:left-5 lg:left-4 xl:left-5 inline-block px-2.5 py-1 text-text font-medium bg-bg rounded-[87px] z-10">
+              2 выставочные площадки
+            </span>
+            <span className="absolute top-37 sx:top-32.5 md:top-53.5 lg:top-33.5 xl:top-53.5 left-2.5 md:left-5.5 lg:left-4.5 xl:left-5 inline-block w-[251px] sx:w-[211px] xl:w-[300px] h-[42px] text-[18px] sx:text-[16px] xl:text-[20px] font-bold text-bg/90 z-10">
+              Посмотрите, как выглядят наши дома вживую
+            </span>
             <video
               playsInline
               muted
-              controls
               preload="metadata"
               className="absolute inset-0 w-full h-full object-cover"
+              poster="images/posters/video1.png"
             >
               <source
                 src="https://ansaradev.ru/ecotech/bann1.mp4"
@@ -32,7 +27,7 @@ const HeroIntro: FC = (): JSX.Element => {
             </video>
           </div>
           <div className="flex flex-col justify-start gap-3.5">
-            <ul className="flex flex-col">
+            <ul className="flex flex-col text-sm">
               <li
                 className="
                   relative pl-4.5
@@ -56,7 +51,7 @@ const HeroIntro: FC = (): JSX.Element => {
             </ul>
             <a
               href="#"
-              className="flex items-center font-semibold text-primary"
+              className="flex items-center font-semibold text-sm md:text-base text-primary"
             >
               <span>Подробнее про выставочные площадки</span>
               <img src="images/chevron-right.svg" alt="" />
@@ -64,23 +59,12 @@ const HeroIntro: FC = (): JSX.Element => {
           </div>
         </div>
         <div className="flex flex-col gap-2.5 sx:flex-1">
-          <div
-            className="
-              relative 
-              w-full 
-              h-[200px]
-              sx:[177px]       
-              md:h-[280px]
-              lg:h-[300px]
-              xl:h-[280px]
-              rounded-[15px]
-              overflow-hidden"
-          >
+          <div className="relative w-full h-[200px] xs:h-[177px] md:h-[280px] lg:h-[200px] xl:h-[280px] rounded-[15px] overflow-hidden ">
             <video
               playsInline
               muted
-              controls
               preload="metadata"
+              poster="images/posters/video2.png"
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source
@@ -88,9 +72,24 @@ const HeroIntro: FC = (): JSX.Element => {
                 type="video/mp4"
               />
             </video>
+
+            <div
+              className="pointer-events-none absolute inset-0 z-10
+               bg-[linear-gradient(90deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_46%,rgba(0,0,0,0.6)_100%)]"
+            />
+            <span className="absolute top-2.5 left-2.5 z-20 flex items-center gap-2.5 w-[220px] sm:w-[300px]">
+              <img
+                src="images/play.svg"
+                className="sm:w-[38px] sm:h-[38px]"
+                alt="Видео"
+              />
+              <span className="text-bg font-bold">
+                Видео о том, как создаётся идеальный дом
+              </span>
+            </span>
           </div>
           <div className="flex flex-col justify-start gap-3.5">
-            <ul className="flex flex-col">
+            <ul className="flex flex-col text-sm">
               <li
                 className="
                   relative pl-4.5
@@ -122,7 +121,9 @@ const HeroIntro: FC = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <HeroSlider />
+      <div className="lg:basis-[37.7%] lg:min-w-[450px] lg:max-w-[640px]">
+        <HeroSlider />
+      </div>
     </div>
   );
 };
