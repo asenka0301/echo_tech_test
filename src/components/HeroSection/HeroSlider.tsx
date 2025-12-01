@@ -43,7 +43,7 @@ const HeroSlider: FC = (): JSX.Element => {
                 <span className="flex items-center gap-2">
                   <img
                     src="/images/square.svg"
-                    className="block w-4 h-3.5"
+                    className="block w-4 h-3.5 min-[680px]:brightness-0 min-[680px]:invert"
                     alt="Площадь"
                   />
                   <span className="font-medium sm:text-bg/90">
